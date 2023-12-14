@@ -1,0 +1,3 @@
+Hi {recipientName}, sending you lots of love! From {senderName} with love.
+Hey {recipientName}, no matter the weather, you're always in {senderName}'s heart! With love.
+Hello {recipientName}, every day is a sunny day with you! Sent by {senderName}.

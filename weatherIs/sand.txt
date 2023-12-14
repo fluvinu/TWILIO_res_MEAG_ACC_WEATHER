@@ -1,0 +1,3 @@
+Hi {recipientName}, in the sand, you're the anchor for {senderName} With love, {senderName}.
+Hey {recipientName}, amidst the sand, our love remains solid Love, {senderName}.
+Hello {recipientName}, sandy days, but our love is unshakable Sent by {senderName}.

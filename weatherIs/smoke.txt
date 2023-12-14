@@ -1,0 +1,3 @@
+Hi {recipientName}, in the smoke, you're the clear vision for {senderName} With love, {senderName}.
+Hey {recipientName}, amidst the smoke, our love shines bright Love, {senderName}.
+Hello {recipientName}, smoky days, but our love is crystal clear Sent by {senderName}.

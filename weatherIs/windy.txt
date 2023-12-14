@@ -1,0 +1,3 @@
+Hi {recipientName}, the wind is blowing, carrying {senderName}'s love to you! With love, {senderName}.
+Hey {recipientName}, in the breeze, our love dances! From {senderName} with love.
+Hello {recipientName}, windy weather, but our love is a gentle breeze! Sent by {senderName}.

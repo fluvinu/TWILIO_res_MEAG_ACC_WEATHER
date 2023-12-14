@@ -1,0 +1,3 @@
+Hi {recipientName}, in the ash, you're {senderName}'s flame! With love, {senderName}.
+Hey {recipientName}, through the ash, our love remains ablaze! Love, {senderName}.
+Hello {recipientName}, ashy days, but our love is a burning passion! Sent by {senderName}.

@@ -1,0 +1,3 @@
+Hi {recipientName}, the thunder roars, but {senderName}'s heart beats for you! With love, {senderName}.
+Hey {recipientName}, in the storm, you're the calm in {senderName}'s heart! Love, {senderName}.
+Hello {recipientName}, thunderstorm, our love stands strong! Sent by {senderName}.

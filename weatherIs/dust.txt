@@ -1,0 +1,3 @@
+Hi {recipientName}, in the dust, you're the clarity in {senderName}'s thoughts! With love, {senderName}.
+Hey {recipientName}, amidst the dust, our love stands strong! Love, {senderName}.
+Hello {recipientName}, dusty days, but our love is crystal clear! Sent by {senderName}.

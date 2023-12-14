@@ -1,0 +1,3 @@
+Hi {recipientName}, in the haze, you're {senderName}'s guiding light! With love, {senderName}.
+Hey {recipientName}, through the haze, our love remains clear! Love, {senderName}.
+Hello {recipientName}, hazy days, but our love cuts through! Sent by {senderName}.

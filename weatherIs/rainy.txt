@@ -1,0 +1,3 @@
+Hi {recipientName}, just like the rain, {senderName}s love for you is pouring! With love, {senderName}.
+Hey {recipientName}, rainy days are cozy with you in {senderName}s thoughts! Love, {senderName}.
+Hello {recipientName}, dancing in the rain of love with you Sent by {senderName}.

@@ -1,0 +1,3 @@
+Hi {recipientName}, the sky is clear, just like {senderName}'s love for you! With love, {senderName}.
+Hey {recipientName}, in this clear sky, you're {senderName}'s shining star! Love, {senderName}.
+Hello {recipientName}, clear skies, clear love – sent by {senderName}.

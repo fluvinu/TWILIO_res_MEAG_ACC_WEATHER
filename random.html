@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilio love SMS Sender with Weather</title>
+</head>
+<body>
+<h1>MAKE YOU FAR ONE TOO CLOSE</h1>
+
+<form id="smsForm">
+    <label for="senderName">Your Name:</label>
+    <input type="text" id="senderName" required>
+    <br>
+    <label for="recipientName">Recipient's Name:</label>
+    <input type="text" id="recipientName" required>
+    <br>
+    <label for="phoneNumber">Recipient's Phone Number:</label>
+    <input type="tel" id="phoneNumber" required>
+    <br>
+    <label for="city">City:</label>
+    <input type="text" id="city" required>
+    <br>
+    <button type="button" onclick="sendMessage()">Send Weather Message</button>
+</form>
+
+<script>
+async function getWeather(city) {
+    const apiKey = 'Yor_API_key';
+    const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+    try {
+        const response = await fetch(weatherApiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const weatherData = await response.json();
+        const temperature = weatherData.main.temp;
+        const weatherDescription = weatherData.weather[0].description;
+
+        return { temperature, weatherDescription };
+    } catch (error) {
+        console.error('Error fetching weather:', error);
+        return { temperature: null, weatherDescription: null };
+    }
+}
+
+// async function loadMessages(filename) {
+//     const response = await fetch(filename);
+//     if (!response.ok) {
+//         throw new Error(`Error loading messages! Status: ${response.status}`);
+//     }
+//     const messages = await response.text();
+//     return messages.split('\n').filter(message => message.trim() !== '');
+// }
+
+async function loadMessages(filename) {
+    const weatherFolder = 'weatherIs';  // Name of the folder
+    const response = await fetch(`${weatherFolder}/${filename}`);
+    
+    if (!response.ok) {
+        throw new Error(`Error loading messages! Status: ${response.status}`);
+    }
+
+    const messages = await response.text();
+    return messages.split('\n').filter(message => message.trim() !== '');
+}
+
+function getRandomMessage(messages) {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    return messages[randomIndex];
+}
+
+async function getRomanticMessage(weatherDescription, senderName, recipientName) {
+    const lowerCaseDescription = weatherDescription.toLowerCase();
+    let filename;
+
+    if (lowerCaseDescription.includes('clear sky')) {
+        filename = 'clear.txt';
+    } else if (lowerCaseDescription.includes('clouds')) {
+        filename = 'cloudy.txt';
+    } else if (lowerCaseDescription.includes('rain')) {
+        filename = 'rainy.txt';
+    } else if (lowerCaseDescription.includes('snow')) {
+        filename = 'snowy.txt';
+    } else if (lowerCaseDescription.includes('mist')) {
+        filename = 'mist.txt';
+    } else if (lowerCaseDescription.includes('thunderstorm')) {
+        filename = 'thunderstorm.txt';
+    } else if (lowerCaseDescription.includes('windy')) {
+        filename = 'windy.txt';
+    } else if (lowerCaseDescription.includes('foggy')) {
+        filename = 'foggy.txt';
+    } else if (lowerCaseDescription.includes('showerrain')) {
+        filename = 'showerrain.txt';
+    } else if (lowerCaseDescription.includes('smoke')) {
+        filename = 'smoke.txt';
+    } else if (lowerCaseDescription.includes('haze')) {
+        filename = 'haze.txt';
+    } else if (lowerCaseDescription.includes('dust')) {
+        filename = 'dust.txt';
+    } else if (lowerCaseDescription.includes('sand')) {
+        filename = 'sand.txt';
+    } else if (lowerCaseDescription.includes('ash')) {
+        filename = 'ash.txt';
+    } else if (lowerCaseDescription.includes('squall')) {
+        filename = 'squall.txt';
+    } else if (lowerCaseDescription.includes('tornado')) {
+        filename = 'tornado.txt';
+    } else {
+        filename = 'default.txt';
+    }
+
+    return loadMessages(filename)
+        .then(messages => getRandomMessage(messages))
+        .then(message => message.replace('{senderName}', senderName).replace('{recipientName}', recipientName));
+}
+
+
+
+async function sendMessage() {
+    const accountSid = 'YOUR TIWILIO ACC AccID';
+    const authToken = 'YOUR TIWILIO ACCC TOKON';
+    const fromNumber = 'YOU TWILIO NUMBER';
+
+    const senderName = document.getElementById('senderName').value;
+    const recipientName = document.getElementById('recipientName').value;
+    const recipientNumber = document.getElementById('phoneNumber').value;
+    const city = document.getElementById('city').value;
+
+    const { temperature, weatherDescription } = await getWeather(city);
+
+    let weatherMessage = `Hi ${recipientName},\n\nCurrent weather in ${city} : `;
+    if (temperature !== null && weatherDescription !== null) {
+        weatherMessage += `${temperature}°C, ${weatherDescription}`;
+        const romanticMessage = await getRomanticMessage(weatherDescription, senderName, recipientName);
+        weatherMessage += `\n\n${romanticMessage}\n\nthis program is created by fluvinu with ♥`;
+    } else {
+        weatherMessage += 'Unable to fetch weather information.';
+    }
+
+    const twilioApiUrl = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
+
+    const base64Auth = btoa(`${accountSid}:${authToken}`);
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Authorization', 'Basic ' + base64Auth);
+
+    const body = new URLSearchParams({
+        To: recipientNumber,
+        From: fromNumber,
+        Body: weatherMessage
+    });
+
+    try {
+        const response = await fetch(twilioApiUrl, {
+            method: 'POST',
+            headers: headers,
+            body: body
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseData = await response.json();
+        console.log('Message sent successfully:', responseData);
+        alert('Message sent successfully!');
+    } catch (error) {
+        console.error('Error sending message:', error);
+        alert('Error sending message. Please try again.');
+    }
+}
+</script>
+
+</body>
+</html>

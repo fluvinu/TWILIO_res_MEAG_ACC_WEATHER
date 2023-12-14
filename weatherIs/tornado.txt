@@ -1,0 +1,3 @@
+Hi {recipientName}, in the tornado, you're {senderName}'s whirlwind! With love, {senderName}.
+Hey {recipientName}, riding the tornado of love with you! Love, {senderName}.
+Hello {recipientName}, tornado days, but our love is an unstoppable force! Sent by {senderName}.

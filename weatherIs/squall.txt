@@ -1,0 +1,3 @@
+Hi {recipientName}, in the squall, you're the calm in {senderName}'s storm! With love, {senderName}.
+Hey {recipientName}, amidst the squall, our love prevails! Love, {senderName}.
+Hello {recipientName}, squally weather, but our love is a gentle breeze! Sent by {senderName}.

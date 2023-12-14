@@ -1,0 +1,3 @@
+Hi {recipientName}, our love is like snowflakes, unique and beautiful! Love, {senderName}.
+Hey {recipientName}, snowfall, a perfect time to cuddle with {senderName}! With love.
+Hello {recipientName}, snowy days, warm hearts – thinking of you! Sent by {senderName}.
