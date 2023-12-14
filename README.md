@@ -19,8 +19,8 @@ This project combines the OpenWeather API and Twilio API to send romantic SMS me
 
 Before running the application, ensure you have the following:
 
-- OpenWeather API key.
-- Twilio Account SID, Auth Token, and Twilio phone number.
+- OpenWeather API key. (line 24)
+- Twilio Account SID, Auth Token, and Twilio phone number. line (123,124,125)
 - Web browser.
 
 ## Usage
