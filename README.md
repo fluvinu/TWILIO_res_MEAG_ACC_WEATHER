@@ -6,7 +6,7 @@ A web application that sends romantic SMS messages based on the current weather 
 
 ## Overview
 
-This project combines the OpenWeather API and Twilio API to send romantic SMS messages to a recipient based on the current weather conditions in their city. The messages are loaded from text files corresponding to different weather conditions.
+This project combines the OpenWeather API and Twilio API to send romantic SMS messages to a recipient based on the current weather conditions in their city. The messages are loaded from text files located isweather folder corresponding to different weather conditions.
 
 ## Features
 
